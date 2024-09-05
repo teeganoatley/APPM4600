@@ -1,3 +1,4 @@
+# importing libraries to use later
 import numpy as np
 import matplotlib.pyplot as plt
 
