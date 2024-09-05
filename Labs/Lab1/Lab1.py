@@ -21,6 +21,7 @@ plt.show()
 x = np.linspace(0, 10, 10)
 y = np.arange(10, 20, 1)
 
+# displaying the first three values of x
 first3x = x[:3]
 print('the first three entries of x are', first3x)
 
