@@ -29,6 +29,7 @@ w = 10**(-np.linspace(1,10,10))
 x = np.linspace(0,len(w),10)
 s = 3*w
 
+# plot in the log scale
 plt.semilogy(x,w)
 plt.semilogy(x,s)
 plt.xlabel('x')
