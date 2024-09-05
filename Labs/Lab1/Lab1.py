@@ -16,6 +16,8 @@ plt.ylabel('y')
 plt.show()
 
 # Exersizes 
+
+#making 2 equal arrays
 x = np.linspace(0, 10, 10)
 y = np.arange(10, 20, 1)
 
