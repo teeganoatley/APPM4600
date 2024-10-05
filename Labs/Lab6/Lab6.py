@@ -23,14 +23,16 @@ def driver():
 def evalF(x): 
 
     F = np.zeros(2)
+    g1 = 3*(x[0]*(x[1]**2))
+    g2 = x[0]**3
     
-    F[0] = 4*x[0]**2 + x[1]**2 - 4
-    F[1] = x[0]+x[1]-np.sin(x[0]-x[1])
+    F[0] = 3*x[1]**2 - x[1]**2
+    F[1] = g1 - g2 - 1
 
     return F
     
 def evalJ(x): 
-    J = np.array([[8*x[0],2*x[1]], [1-np.cos(x[0]-x[1]),1+np.cos(x[0]-x[1])]])
+    J = np.array([[6*x[0]**2, -2*x[1]],[3*x[1]**2-3*x[0]**2, 6*x[0]*x[1]]])
     return J
 
 def LazyNewton(x0,tol,Nmax):

@@ -6,9 +6,9 @@ from numpy.linalg import norm
 
 def driver():
 
-    x0 = np.array([0.1, 0.1, -0.1])
+    x0 = np.array([1, 1])
     
-    Nmax = 100
+    Nmax = 10000
     tol = 1e-10
     
     t = time.time()
@@ -40,19 +40,18 @@ def driver():
      
 def evalF(x): 
 
-    F = np.zeros(3)
+    F = np.zeros(2)
     
-    F[0] = 3*x[0]-math.cos(x[1]*x[2])-1/2
-    F[1] = x[0]-81*(x[1]+0.1)**2+math.sin(x[2])+1.06
-    F[2] = np.exp(-x[0]*x[1])+20*x[2]+(10*math.pi-3)/3
+    F[0] = 3*x[1]**2 - x[1]**2
+    F[1] = 3*(x[0]*(x[1]**2)) - x[0]**3 - 1
+
     return F
     
 def evalJ(x): 
 
     
-    J = np.array([[3.0, x[2]*math.sin(x[1]*x[2]), x[1]*math.sin(x[1]*x[2])], 
-        [2.*x[0], -162.*(x[1]+0.1), math.cos(x[2])], 
-        [-x[1]*np.exp(-x[0]*x[1]), -x[0]*np.exp(-x[0]*x[1]), 20]])
+    J = np.array([[6*x[0]**2, -2*x[1]], [3*x[1]**2-3*x[0]**2, 6*x[0]*x[1]]])
+    
     return J
 
 
